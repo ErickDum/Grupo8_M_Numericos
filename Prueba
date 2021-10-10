@@ -1,5 +1,0 @@
-print('Hola Mundo')
-#bibkjbkjbkjbjkbkbbvuyvuh hjk
-
-for i in range(5):
-    print(i*i)
