@@ -1,8 +1,12 @@
-% Autores: 
+% Autores: Mateo Chimbo
+%          Erick Dumas
+%          Karla Esterilla
 %
-% Fecha:
+% Fecha: 11/10/2021
+%
 % Descripcion: 
-%
+% Implementacion del metodo de Newton-Raphson para hallar las raices 
+% en ecuaciones no lineales.
 
 clear, clc, clf;
 
