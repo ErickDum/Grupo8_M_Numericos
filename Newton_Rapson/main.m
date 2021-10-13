@@ -23,7 +23,7 @@ clear, clc, clf;
 
 disp("Esfera flotante");
 
-f = @(x) x^(3) - 0.165*x^(2) + 0.0003993;
+f = @(x) x.^(3) - 0.165*x.^(2) + 0.0003993;
 df = @(x) 3*x.^(2) - 0.33*x;
 
 figure(1)
@@ -41,10 +41,10 @@ d = newton(f, df, 0.05, 100);
 fprintf('Iteración\txn\terror\n');
 
 for i=2:m
-  plot(i, 0 , 'o')
+  plot(d(1,i), 0 , 'o')
   fprintf('%d\t',i-1);
+  fprintf('%d\t',d(1,i));
   fprintf('%d\t',d(2,i));
-  fprintf('%d\t',d(3,i));
   fprintf('\n');
 endfor
 %
@@ -80,9 +80,9 @@ d = newton(g, dg, 0.5, 3);
 fprintf('Iteración\txn\terror\n');
 
 for i=2:m
-  plot(i, 0 , 'o')
+  plot(d(1,i), 0 , 'o')
   fprintf('%d\t',i-1);
+  fprintf('%d\t',d(1,i));
   fprintf('%d\t',d(2,i));
-  fprintf('%d\t',d(3,i));
   fprintf('\n');
 endfor
