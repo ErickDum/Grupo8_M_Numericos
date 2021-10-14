@@ -16,7 +16,7 @@ fprintf('Problema 1 \n');
 f_r = f = @(x) e.^(-x) - x; %Funcion original f(x)
 f = @(x) e.^(-x);           %Funcion despejada x = g(x)
 
-d = punto_fijo(f, 5, 10);
+d = punto_fijo(f, 5, 5);
 
 figure(1)
 fplot(f_r,[-10, 10])

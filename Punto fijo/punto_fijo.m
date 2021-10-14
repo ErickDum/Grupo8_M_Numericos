@@ -17,7 +17,7 @@ function [datos]=punto_fijo(f, x0, n_i = 100, tol = 0.001)
     if (error < tol)
       i = n_i -1;
     endif
-     x0 = x1;
-     i ++;
+    x0 = x1;
+    i ++;
   endwhile
 endfunction
