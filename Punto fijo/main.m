@@ -51,6 +51,7 @@ hold off;
 % Se describe un corriente que oscila en un corcuito electrico, descrita por
 % I = 9*e^(-t)*sin(2*pi*t), donde t esta en segundos.
 % Encontrar t cuando I = 3.5. 
+% Obtenido de: Applied Numerical Methods Steven C. Chapra 6.18
 
 fprintf('Corrinte electrica\n');
 g_r = @(x) 9*exp(-x)*sin(2*pi*x);       %Funcion original f(x)
