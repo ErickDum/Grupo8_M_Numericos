@@ -6,18 +6,21 @@
 %     n_i = numero de iteraciones 
 %     tol = tolerancia
 
-function [datos]=punto_fijo(f, x0, n_i = 100, tol = 0.001)
+function [datos, msg]=punto_fijo(f, x0, n_i = 100, tol = 0.001)
   datos = zeros(2,1);
   i = 0;
   while i < n_i
     x1 = f(x0);
-    error = abs((x1-x0)/x1)*10000;
-    error = round(error)/10000;
-    datos = [datos [x1; error]];
-    if (error < tol)
-      i = n_i -1;
-    endif
+    ea = abs((x1-x0)/x1)*10000;
+    ea = round(ea)/10000;
+    datos = [datos [x1; ea]];
     x0 = x1;
     i ++;
+    if (ea < tol)
+      msg = 'Error menor a tolerancia';
+      break;
+    else
+      msg = 'Numero de iteraciones maximo';
+    endif
   endwhile
 endfunction

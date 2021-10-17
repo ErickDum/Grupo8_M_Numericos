@@ -11,17 +11,21 @@
 clear, clc
 
 % PROBLEMA 1
+% Un lanzador de peso puede ser modelado usando la ecuación y = -0.0241x^2+x+5.5,
+% donde x es la distancia recorrida (en pies) y 'y' es la altura (en pies).
+% ¿Que tan largo es el tiro?
 
-fprintf('Problema 1 \n');
-f_r = f = @(x) e.^(-x) - x; %Funcion original f(x)
-f = @(x) e.^(-x);           %Funcion despejada x = g(x)
+fprintf('Lanzamiento de bala \n');
+f_r = @(x) -0.0241*x.^(2) + x +5.5;      %Funcion original f(x)
+f = @(x) (x + 5.5)/(0.0241*x);           %Funcion despejada x = g(x)
 
-d = punto_fijo(f, 5, 5);
+[d, msg] = punto_fijo(f, 5);
+
 
 figure(1)
-fplot(f_r,[-10, 10])
+fplot(f_r,[-5, 50])
 legend ("f(x)", 'Interpreter', 'latex');
-title('PROBLEMA 1', 'Interpreter', 'latex')
+title('Lanzamiento de bala', 'Interpreter', 'latex')
 xlabel('X', 'Interpreter', 'latex')
 ylabel('Y', 'Interpreter', 'latex')
 grid on
@@ -39,24 +43,27 @@ for i=2:m
   fprintf('\n');
 endfor
 
-hold off
+disp(msg)
+hold off;
 
 
-%PROBLEMA 2
+% PROBLEMA 2
+% Se describe un corriente que oscila en un corcuito electrico, descrita por
+% I = 9*e^(-t)*sin(2*pi*t), donde t esta en segundos.
+% Encontrar t cuando I = 3.5. 
 
+fprintf('Corrinte electrica\n');
+g_r = @(x) 9*exp(-x)*sin(2*pi*x);       %Funcion original f(x)
+g = @(x) -log(3.5/(18*pi*x));           %Funcion despejada x = g(x)
 
-fprintf('Problema 2 \n');
-g_r = f = @(x) cos(x) - x; %Funcion original f(x)
-g = @(x) cos(x);           %Funcion despejada x = g(x)
-
-d = punto_fijo(g, 5, 10);
+[d, msg] = punto_fijo(g, -3, 10);
 
 figure(2)
 fplot(g_r,[-10, 10])
 legend ("f(x)", 'Interpreter', 'latex');
-title('PROBLEMA 2', 'Interpreter', 'latex')
-xlabel('X', 'Interpreter', 'latex')
-ylabel('Y', 'Interpreter', 'latex')
+title('Corrinte electrica', 'Interpreter', 'latex')
+xlabel('t', 'Interpreter', 'latex')
+ylabel('I', 'Interpreter', 'latex')
 grid on
 hold on
 
@@ -71,3 +78,4 @@ for i=2:m
   fprintf('%.4f\t\t', d(2,i))
   fprintf('\n');
 endfor
+disp(msg)
