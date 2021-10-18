@@ -15,12 +15,21 @@ clear, clc
 % donde x es la distancia recorrida (en pies) y 'y' es la altura (en pies).
 % ¿Que tan largo es el tiro?
 
+
 fprintf('Lanzamiento de bala \n');
 f_r = @(x) -0.0241*x.^(2) + x +5.5;      %Funcion original f(x)
 f = @(x) (x + 5.5)/(0.0241*x);           %Funcion despejada x = g(x)
 
-[d, msg] = punto_fijo(f, 5);
 
+[d, i, n_i] = punto_fijo(f, 5);
+
+try
+if (i==n_i)
+  error('Numero maximo de iteraciones')
+endif
+catch err
+fprintf('Error: %s\n',err.message);
+end
 
 figure(1)
 fplot(f_r,[-5, 50])
@@ -43,8 +52,8 @@ for i=2:m
   fprintf('\n');
 endfor
 
-disp(msg)
 hold off;
+
 
 
 % PROBLEMA 2
@@ -58,7 +67,15 @@ fprintf('Altura de nieve\n');
 g_r = @(x) 11.6*x - 12.41*x.^(2) + 6.2*x.^(3) - 1.58*x.^(4) + 0.2*x.^(5) - 0.01*x.^(6); %Funcion original f(x)
 g = @(x) (11.6*x + 6.2*x.^(3) - 1.58*x.^(4) + 0.2*x.^(5) - 0.01*x.^(6))/(12.41*x);     %Funcion despejada x = g(x)
 
-[d, msg] = punto_fijo(g, 5);
+[d, i, n_i] = punto_fijo(g, 5, 15);
+
+try
+if (i==n_i)
+  error('Numero maximo de iteraciones')
+endif
+catch err
+fprintf('Error: %s\n',err.message);
+end
 
 figure(2)
 fplot(g_r,[0, 15])
@@ -80,4 +97,3 @@ for i=2:m
   fprintf('%.4f\t\t', d(2,i))
   fprintf('\n');
 endfor
-disp(msg)

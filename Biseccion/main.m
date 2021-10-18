@@ -16,10 +16,10 @@ f = @(x) x.^2 - 5;
 a = -3;
 b = 0;
 delta = 2;
-datos=""
+datos="";
 
 try 
-  [y, datos, iter] = biseccion(f,a,b);
+  [y, datos, iter] = biseccion(f,a,b, 0.001, 10);
   fprintf('El valor de corte es y=%d, el número de iteraciones es %d\n',y,iter);
   
   h=figure(1);
