@@ -48,23 +48,24 @@ hold off;
 
 
 % PROBLEMA 2
-% Se describe un corriente que oscila en un corcuito electrico, descrita por
-% I = 9*e^(-t)*sin(2*pi*t), donde t esta en segundos.
-% Encontrar t cuando I = 3.5. 
-% Obtenido de: Applied Numerical Methods Steven C. Chapra 6.18
+% Empezó a caer nieve al mediodía de un domingo. La cantidad de nieve 
+% en el suelo en cierto lugar en el tiempo t está dada por la función
+% h(t) = 11.6*t - 12.41*t^2 + 6.2*t^3 - 1.58*t^4 + 0.2*t^5 - 0.01*t^6
+% ¿En que dia desaparecio la nieve completamente?
 
-fprintf('Corrinte electrica\n');
-g_r = @(x) 9*exp(-x)*sin(2*pi*x);       %Funcion original f(x)
-g = @(x) -log(3.5/(18*pi*x));           %Funcion despejada x = g(x)
 
-[d, msg] = punto_fijo(g, -3, 10);
+fprintf('Altura de nieve\n');
+g_r = @(x) 11.6*x - 12.41*x.^(2) + 6.2*x.^(3) - 1.58*x.^(4) + 0.2*x.^(5) - 0.01*x.^(6); %Funcion original f(x)
+g = @(x) (11.6*x + 6.2*x.^(3) - 1.58*x.^(4) + 0.2*x.^(5) - 0.01*x.^(6))/(12.41*x);     %Funcion despejada x = g(x)
+
+[d, msg] = punto_fijo(g, 5);
 
 figure(2)
-fplot(g_r,[-10, 10])
+fplot(g_r,[0, 15])
 legend ("f(x)", 'Interpreter', 'latex');
-title('Corrinte electrica', 'Interpreter', 'latex')
-xlabel('t', 'Interpreter', 'latex')
-ylabel('I', 'Interpreter', 'latex')
+title('Altura de nieve')
+xlabel('t (dias)')
+ylabel('h (in)')
 grid on
 hold on
 
@@ -73,7 +74,7 @@ pause(1);
 fprintf('Iteración\t xn\t\t error\n');
 for i=2:m
   plot(d(1,i), 0 , 'o')
-  pause(0.5);
+  pause(0.1);
   fprintf('%.0f\t\t', i-1)
   fprintf('%.4f\t\t', d(1,i))
   fprintf('%.4f\t\t', d(2,i))
