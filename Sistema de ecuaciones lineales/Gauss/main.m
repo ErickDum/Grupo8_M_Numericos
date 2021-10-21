@@ -11,21 +11,27 @@
 clear, clc
 
 
-%Problema 1
+% Problema 1
+% Un circuito se resuelve mediante analisis nodal, a partir de ahi se 
+% plantean ecuaciones con incognitas voltajes en cada nodo:
+% 2v1-v3=-8, 2v2-v3=8, 7v3-v2-2v1=0
 
-a = [1, -1, 0, 3; 2, 1, -1, 1; 3, -1, -1, 2; -1, 2, 3, -1];
-b = [0;1;-3;4];
+fprintf('Tensiones en nodos \n');
 
-[at, bt] = gauss(a,b);
+a = [2, 0, -1; 0, 2, -1; -2, -1, 7];
+b = [-8; 8; 0];
 
-n = length(b);
-x = zeros(n,1);
+[x] = gauss(a,b)
 
-for i=n:-1:1
-  x(i)= bt(i)/at(i,i);
-  for j=1:i-1
-    bt(j) = bt(j)- x(i)*at(j,i);
-  endfor
-endfor
 
-x
+%Problema 2
+% Un circuito se resuelve mediante analisis nodal, a partir de ahi se 
+% plantean ecuaciones con incognitas voltajes en cada nodo: 
+% 3v1-2v2=4, 2v1-7v2+5v3=4, 2v2-3v3=-16
+
+fprintf('Tensiones en nodos \n');
+
+a = [3, -2, 0; 2, -7, 5; 0, 2, -3];
+b = [4; 4; -16];
+
+[x] = gauss(a,b)
