@@ -20,7 +20,10 @@ function [r,iteraciones] = regula_falsi(LL, RL, f, tol,max)
 if f(LL) * f(RL) < 0 
     PC = RL-((RL-LL)*f(RL)/(f(RL)-f(LL))); 
     contador = 0; 
+    fprintf('Iteraciones \t xn \t\t Error \n')
+    PC = 0;
     while abs(f(PC)) > tol && contador < max
+        PP = PC;
         PC = ((LL*f(RL))-(RL*f(LL)))/(f(RL)-f(LL));
         if f(PC) == 0 
             r = PC;
@@ -32,6 +35,15 @@ if f(LL) * f(RL) < 0
             end
         end
         contador = contador + 1;
+        ea = abs((PC-PP)/PC)*10000;
+        ea = round(ea)/10000;
+        fprintf('%.0f\t\t', contador);
+        fprintf('%.5f\t\t', PC);
+        fprintf('%.5f\t\t', ea);
+        fprintf('\n');
+        if (ea < tol)
+          break;
+        endif
     end
     iteraciones= contador;
     r = PC;
