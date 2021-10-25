@@ -7,6 +7,10 @@
 
 function [x]=gauss(a, b)
   n = length(b);
+  [f, c] = size(a);
+  if (f!=c | f!=n | c!=n)
+    error('Matriz de tamaño incorrecto')
+  endif
   x = zeros(n,1);
   for i=1:n-1
     for j=i+1:n

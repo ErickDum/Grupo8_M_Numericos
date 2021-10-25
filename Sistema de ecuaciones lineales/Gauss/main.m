@@ -18,10 +18,14 @@ clear, clc
 
 fprintf('Tensiones en nodos \n');
 
+try
 a = [2, 0, -1; 0, 2, -1; -2, -1, 7];
 b = [-8; 8; 0];
 
 [x] = gauss(a,b)
+catch err
+fprintf('Error: %s\n',err.message)
+end
 
 
 %Problema 2
@@ -31,7 +35,11 @@ b = [-8; 8; 0];
 
 fprintf('Tensiones en nodos \n');
 
+try
 a = [3, -2, 0; 2, -7, 5; 0, 2, -3];
 b = [4; 4; -16];
 
 [x] = gauss(a,b)
+catch err
+fprintf('Error: %s\n',err.message)
+end
