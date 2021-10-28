@@ -21,9 +21,9 @@ n = length(b);
 ab = [a,b];
 [R, C] = size(ab);
 for j = 1:R - 1
-  if ab(j,j) == 0
+  if (ab(j,j) == 0)
     for k = j + l:R
-      if ab(k,j) -= 0
+      if (ab(k,j) -= 0)
         abTemp = ab(j,:);
         ab(j,:) = ab(k,:);
         ab (k,:) = abTemp;
