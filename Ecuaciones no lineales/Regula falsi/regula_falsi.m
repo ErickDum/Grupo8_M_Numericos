@@ -5,7 +5,6 @@
 % Fecha: 21/10/21
 % Descripción: Implementacion del metodo regula falsi para hallar 
 % las raices en ecuaciones no lineales
-
 % Parámetros:
 % r: Raiz encontrada por el metodo
 % iteraciones: numero de iteraciones usadas
