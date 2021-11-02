@@ -29,6 +29,7 @@ catch err
 fprintf('Error: %s\n',err.message)
 end
 
+fprintf('\n')
 %PROBLEMA 2
 % Un circuito se resuelve mediante analisis de mallas, a partir de ahi se 
 % plantean una matriz de R*I=V
@@ -40,8 +41,14 @@ imagen2 = imread('circuito2.png');
 imshow(imagen2)
 
 try
-A = [1, 0, 0, 0; 1, 1, -1, 0; 0, 1000, 3000, -2000; 0, 1000, 1000, -2000];
-b = [0.004; 0; 8; 12];
+A = [3, -1, 0, -1, 0, 0; 
+-1, 2, 0, 0, -1, 0;
+0, 0, 1, 0, -2, 2;
+-3, 0, 0, 1, 0, 0;
+2, -1, 0, 0, 2, -1; 
+0, 0, 0, 0, -3, 5];
+
+b = [0; 0.006; 0; 0.012; 0; 0];
 
 [I, Error, Iteraciones] = gauss_seidel(A, b)
 catch err
