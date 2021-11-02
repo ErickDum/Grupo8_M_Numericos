@@ -1,6 +1,6 @@
-% JACOBI resuelve un sistema lineal mediante iteraciones.
-% JACOBI(A, B, N_I, TOL)
-%      [x, error, i]=jacobi(A, b, n_i = 100, tol = 0.001)
+% GAUSS_SEIDEL resuelve un sistema lineal mediante iteraciones.
+% GAUSS_SEIDEL(A, B, N_I, TOL)
+%      [x, error, i]=gauss_seidel(A, b, n_i = 100, tol = 0.001)
 %       x = Soluciones del sistema.
 %       error = Error de la solucion.
 %       i = Numero de iteraciones para llegar a la solucion.
@@ -9,8 +9,7 @@
 %       n_i = Numero maximo de iteraciones.
 %       tol = Tolerancia   
 
-
-function [x, error, i]=jacobi(A, b, n_i = 100, tol = 0.001)
+function [x, error, i]= gauss_seidel(A, b, n_i = 100, tol = 0.001)
   [n,n] = size(A);
   x0 = zeros(n,1);
   D = diag(diag(A));
@@ -21,7 +20,7 @@ function [x, error, i]=jacobi(A, b, n_i = 100, tol = 0.001)
   error = res/norm(b);
   i = 0;
   while i < n_i && error > tol
-    x = D1*(E+F)*x0+D1*b;
+    x = (D-E)\(F*x0+b);
     res = norm(A*x0 - b);
     error = res/norm(b);
     x0 = x;
