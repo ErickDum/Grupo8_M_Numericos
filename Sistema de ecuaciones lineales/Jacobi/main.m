@@ -2,7 +2,7 @@
 %          Erick Dumas
 %          Karla Esterilla
 %
-% Fecha: 27/10/2021
+% Fecha: 01/11/2021
 %
 % Descripcion: 
 % Implementacion del metodo de Jacobi 
