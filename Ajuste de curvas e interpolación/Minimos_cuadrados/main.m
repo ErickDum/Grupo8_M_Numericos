@@ -54,7 +54,7 @@ hold off;
 % histórica de venta de un producto determinado durante los últimos 
 % 12 trimestres (3 años).
 
-disp('PROBLEMA 1')
+disp('PROBLEMA 2')
 
 try
 x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; % Meses

@@ -18,6 +18,6 @@ function [Sr, a0, a1]=minimos_cuadrados(x, y)
   a0 = ym - a1*xm;
   Sr = 0;
   for i=1:n
-    Sr = (y(i)-a0-a1*x(i)).^2;
+    Sr = Sr + (y(i)-a0-a1*x(i)).^2;
   endfor
 end
