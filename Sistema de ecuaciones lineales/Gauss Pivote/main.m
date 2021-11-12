@@ -5,7 +5,7 @@
 % Fecha: 28/10/2021
 %
 % Descripcion: 
-% Implementacion del metodo de Gauss para resolver un sistema de 
+% Implementacion del metodo de Gauss con pivot para resolver un sistema de 
 % ecuaciones lineales.
 
 clear, clc
@@ -23,7 +23,7 @@ imagen1 = imread('circuito1.png');
 imshow(imagen1);
 
 try
-a = [3, -1; -3, 5];
+a = [3, -1; -3 , 5];
 b = [20;60];
 
 [x] = gauss_p(a,b)
