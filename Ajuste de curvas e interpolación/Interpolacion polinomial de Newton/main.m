@@ -16,14 +16,23 @@ clear, clc
 % reunido la informacion de cuatro camiones:
 disp('PROBLEMA 1')
 try
-x = [1 2 4 5 7];
-y = [52 5 -5 -40 10] ;
+x = [1, 2, 4, 5, 7];
+y = [52, 5, -5, -40, 10];
 fprintf('Valor interpolado: \n')
 Yinterpolated = int_n(x,y,3)
+
+figure(1)
+grid on
+hold on
+for i=1:numel(x)
+  plot(x(i), y(i), 'o')
+endfor
+
 catch err
 fprintf('Error: %s\n',err.message);
 end
 
+hold off;
 
 % Problema 2:
 % Se requiere un pronostico de demanda haciendo uso de la información 
@@ -31,11 +40,20 @@ end
 % 12 trimestres (3 años).
 
 disp('PROBLEMA 2')
+
 try
 x = [0 1 2 3 4];
 y = [-50 10 90 250 550] ;
 fprintf('Valor interpolado: \n')
 Yinterpolated = int_n(x,y,3)
+
+figure(2)
+grid on
+hold on
+for i=1:numel(x)
+  plot(x(i), y(i), 'o')
+endfor
+
 catch err
 fprintf('Error: %s\n',err.message);
 end
