@@ -27,7 +27,7 @@ C=[G' b'];
 %%%
 
 
-%Y=SustitucionP(C);
+
 n=length(C)-1;
 m=n+1;
 Y(1)=C(1,m)/C(1,1);
@@ -42,8 +42,7 @@ endfor
 %%%
 D=[G Y'];
 
-%******************************
-%Sustitucion(D)
+
 
 n=length(D)-1;
 m=n+1;
@@ -59,7 +58,3 @@ endfor
 
 %*****************************
 
- % for i=1:n
-  %  fprintf('x(%2.0f) -%5.5f\n',i,X(i))
-  %endfor
-  
