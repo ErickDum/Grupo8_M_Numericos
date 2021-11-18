@@ -1,4 +1,3 @@
-function Yint = int_n(x,y,Xint)
 % Se implementa el metodo de interpolacion polinomial de newton para determinar
 % el valor interpolado en un punto, usando los polinomios de newton
 % Variables de entrada:
@@ -8,25 +7,18 @@ function Yint = int_n(x,y,Xint)
 % Variables de salida:
 % Yint; El valor del punto interpolado
 
-n = length (x) ;
-a (1)= y (1);
-if (numel(x)!=numel(y))
-  error('Matrices de tamaños incorrectos')
+clear, clc
+
+x = [1, 4, 6, 5];
+y = [0, 1.38, 1.79, 1.60];
+
+function b = int_n(x,y)
+  n = numel(x) -1;
+  b = zeros(n);
+  b0 = y(1)
+  for i=1:n
+    b(i, 1) = (y(i+1) - y(i))/(x(i+1) - x(i));
+  endfor
 end
-for i = 1:n - 1
-  divDIF(i,1)=(y(i+1)-y(i))/(x(i+ 1)-x(i));
-end
-for j = 2 :n - 1
-  for i = 1:n - j
-    divDIF(i,j)=(divDIF(i+1,j-1) -divDIF(i,j-1))/(x(j+i)-x(i));
-  end
-end
-for j = 2 :n
-  a(j) = divDIF(1,j - 1);
-end
-Yint =a (1);
-xn = 1;
-for k = 2:n
-  xn = xn* (Xint - x (k - 1)) ;
-  Yint = Yint + a (k) *xn;
-end
+
+b = int_n(x, y)
