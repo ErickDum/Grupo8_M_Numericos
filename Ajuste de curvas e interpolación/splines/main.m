@@ -51,10 +51,11 @@ end
 
 disp('PROBLEMA 2')
 
+try
+
 T = [0, 8, 16, 24, 32, 40];
 o = [14.621, 11.843, 9.870, 8.418, 7.305, 6.413]
 TT = linspace(T(1),T(length(T)));
-
 
 [oo, d1o, d2o] = natspline(T, o, TT);
 
@@ -73,3 +74,6 @@ plot(TT, d2o)
 title('d2y/dx2')
 grid on
 
+catch err
+fprintf('Error: %s\n',err.message);
+end
