@@ -34,5 +34,3 @@ for i=1:rows(A)
 endfor
 resultados=A(:,columns(A));
 
-########No poner msgbox en la funcion 
-#####3333poner el err para que capte el try catch
