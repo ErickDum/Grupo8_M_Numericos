@@ -18,7 +18,7 @@ function [yy,dy,d2] = natspline(x,y,xx)
   endif
   m = length(xx);
   b = zeros(n,n);
-  aa(1,1) = 1; aa(n,n) = 1; %set up Eq. 18.27
+  aa(1,1) = 1; aa(n,n) = 1;
   bb(1) = 0; bb(n) = 0;
   for i = 2:n-1
     aa(i,i-1) = h(x, i - 1);
@@ -26,13 +26,13 @@ function [yy,dy,d2] = natspline(x,y,xx)
     aa(i,i+1) = h(x, i);
     bb(i) = 3 * (fd(i + 1, i, x, y) - fd(i, i - 1, x, y));
   endfor
-  c = aa\bb'; %solve for c coefficients
-  for i = 1:n - 1 %solve for a, b and d coefficients
+  c = aa\bb'; 
+  for i = 1:n - 1 
     a(i) = y(i);
     b(i) = fd(i + 1, i, x, y) - h(x, i) / 3 * (2 * c(i) + c(i + 1));
     d(i) = (c(i + 1) - c(i)) / 3 / h(x, i);
   endfor
-  for i = 1:m %perform interpolations at desired values
+  for i = 1:m 
     [yy(i),dy(i),d2(i)] = SplineInterp(x, n, a, b, c, d, xx(i));
   endfor
 end
