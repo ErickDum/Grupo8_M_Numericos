@@ -1,4 +1,4 @@
-% natspline: natural spline with differentiation
+% natspline
 % [yy,dy,d2] = natspline(x,y,xx)
 % ENTRADA:
 % x = Vector de variables independientes
