@@ -5,8 +5,8 @@
 % Fecha: 11/10/2021
 %
 % Descripcion: 
-% Implementacion del metodo de Newton-Raphson para hallar las raices 
-% en ecuaciones no lineales.
+% Implementacion del metodo de diferencias finitas divididas hacia atras 
+% para hallar la derivada de una funcion en un rango especifico.
 
 clear, clc, clf;
 
@@ -23,7 +23,7 @@ t = linspace(0,10,100);
 
 [d1, d2] = finitas_atras(i, t);
 
-Vl = 15*d1(2,:)
+Vl = 15*d1(2,:);
 
 figure(1)
 
@@ -50,7 +50,7 @@ t = linspace(0,10,100);
 
 [d1, d2] = finitas_atras(i, t);
 
-Vl = 15*d1(2,:)
+Vl = 15*d1(2,:);
 
 figure(2)
 

@@ -1,3 +1,11 @@
+% [d1, d2] = finitas_atras(f, x)
+% ENTRADAS:
+% f = funcion a derivar
+% x = vector de variable independiente
+% SALIDAS:
+% d1 = matriz con puntos en x e y de la primera derivada
+% d2 = matriz con puntos en x e y de la segunda derivada
+
 function [d1, d2] = finitas_atras(f, x)
   n = numel(x);
   if (n==1)
