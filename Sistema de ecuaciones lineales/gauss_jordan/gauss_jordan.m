@@ -16,9 +16,8 @@ function[resultados]=gauss_jordan(A)
 
 for i=1:rows(A)
   pivote=A(i,i);
-  if pivote==0
-    msgbox("la matriz no es independiente");
-    resultados="no tiene solucion unica";
+  if (pivote==0)
+    error('No tiene solucion unica')
   endif
   A(i,:)=A(i,:)/pivote; 
   A([1 i],:)=A([i 1],:); 
