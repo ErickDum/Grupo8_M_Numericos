@@ -21,7 +21,6 @@ try
 
 
 V=gauss_jordan(A);
-A
 for i=1:3
   fprintf('V(%2.0f) %5.5f\n',i,V(i))
 endfor

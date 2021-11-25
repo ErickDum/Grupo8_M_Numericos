@@ -3,7 +3,7 @@
 % Fecha:
 % Descripcion: 
 %
-
+clear, clc
 
 % Problema 1:
 %   

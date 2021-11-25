@@ -10,8 +10,6 @@
 %       resultados=Solucion de la matriz
 %       
 
-
-
 function[resultados]=gauss_jordan(A)
 
 for i=1:rows(A)
