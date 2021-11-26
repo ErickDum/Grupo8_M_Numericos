@@ -2,7 +2,7 @@
 %          Erick Dumas
 %          Karla Esterilla
 %
-% Fecha: 18/10/2021
+% Fecha: 25/11/2021
 %
 % Descripcion: 
 % Implementacion del metodo de Gauss, Eliminación de Gauss con pivote, 
@@ -77,7 +77,7 @@ fprintf('Error: %s\n',err.message)
 end
 
 
-%Problema 2
+% Problema 2
 % Un circuito se resuelve mediante analisis nodal, a partir de ahi se 
 % plantean ecuaciones con incognitas voltajes en cada nodo: 
 % 3v1-2v2=4, 2v1-7v2+5v3=4, 2v2-3v3=-16

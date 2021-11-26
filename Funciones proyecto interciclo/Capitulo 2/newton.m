@@ -16,8 +16,8 @@ function [datos]=newton(f, df, x0, n_i = 100, tol = 0.001)
    i = 0; 
    while (i < n_i)
      x1 = x0 - (f(x0)/df(x0));
-     error = abs((x1-x0)/x1)*1000;
-     error = round(error)/1000;
+     error = abs((x1-x0)/x1)*10000;
+     error = round(error)/10000;
      datos = [datos [x1; error]];
      if (error < tol)
        i = n_i -1;
