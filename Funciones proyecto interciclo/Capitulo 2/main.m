@@ -15,7 +15,7 @@ clear, clc
 % En un circuito la corrite esta dada por i = -5t + exp(-x). Hallar el valor 
 % de t para i = 6.
 
-disp('Problema 2')
+disp('Problema 1')
 
 f = @(x) -5*x + e.^(-x) -6;
 f_r = @(x) (6-e.^(-x))/-5;
@@ -48,21 +48,28 @@ error_punto_fijo = e(n,m);
 xn_punto_fijo = e(n-1,m);
 
 tic;
-f = secante(f, 1, 3);
+j = secante(f, -5, 5);
 tiempo_secante = toc;
-[n,m] = size(f);
+[n,m] = size(j);
 i_secante = m -1;
-error_secante = f(n,m);
-xn_secante = f(n-1,m);
+error_secante = j(n,m);
+xn_secante = j(n-1,m);
 
-g = @(x) -5*x + exp(-x) - 6;
 tic;
-g = regula_falsi(g, -5, 5);
+g = regula_falsi(f, -5, 5);
 tiempo_regula_falsi = toc;
 [n,m] = size(g);
 i_regula_falsi = m -1;
 error_regula_falsi = g(n,m);
 xn_regula_falsi = g(n-1,m);
+
+tic;
+h = biseccion(f, -5, 5);
+tiempo_biseccion = toc;
+[n,m] = size(h);
+i_biseccion = m -1;
+error_biseccion = h(n,m);
+xn_biseccion = h(n-1,m);
 
 fprintf('Método\t\t T.Ejecución\t N.Iteraciones\t xn\t\t error\n');
 %Newton-Raphson
@@ -79,6 +86,10 @@ fprintf('\n');
 
 %Regula Falsi
 fprintf('Regula Falsi\t %.4f\t\t %.0f\t\t %.4f\t %.4f\t\t', tiempo_regula_falsi, i_regula_falsi, xn_regula_falsi, error_regula_falsi);
+fprintf('\n');
+
+%Biseccion
+fprintf('Biseccion\t %.4f\t\t %.0f\t\t %.4f\t %.4f\t\t', tiempo_biseccion, i_biseccion, xn_biseccion, error_biseccion);
 fprintf('\n\n');
 
 catch err
@@ -124,21 +135,28 @@ error_punto_fijo = e(n,m);
 xn_punto_fijo = e(n-1,m);
 
 tic;
-f = secante(f, 1, 3);
+h = secante(f, 1, 3);
 tiempo_secante = toc;
-[n,m] = size(f);
+[n,m] = size(h);
 i_secante = m -1;
-error_secante = f(n,m);
-xn_secante = f(n-1,m);
+error_secante = h(n,m);
+xn_secante = h(n-1,m);
 
-g = @(x) sin(x)-x+1;
 tic;
-g = regula_falsi(g, -5, 5);
+g = regula_falsi(f, -5, 5);
 tiempo_regula_falsi = toc;
 [n,m] = size(g);
 i_regula_falsi = m -1;
 error_regula_falsi = g(n,m);
 xn_regula_falsi = g(n-1,m);
+
+tic;
+h = biseccion(f, -5, 5);
+tiempo_biseccion = toc;
+[n,m] = size(h);
+i_biseccion = m -1;
+error_biseccion = h(n,m);
+xn_biseccion = h(n-1,m);
 
 fprintf('Método\t\t T.Ejecución\t N.Iteraciones\t xn\t\t error\n');
 %Newton-Raphson
@@ -155,6 +173,10 @@ fprintf('\n');
 
 %Regula Falsi
 fprintf('Regula Falsi\t %.4f\t\t %.0f\t\t %.4f\t\t %.4f\t\t', tiempo_regula_falsi, i_regula_falsi, xn_regula_falsi, error_regula_falsi);
+fprintf('\n');
+
+%Biseccion
+fprintf('Biseccion\t %.4f\t\t %.0f\t\t %.4f\t\t %.4f\t\t', tiempo_biseccion, i_biseccion, xn_biseccion, error_biseccion);
 fprintf('\n\n');
 
 catch err
@@ -202,21 +224,28 @@ error_punto_fijo = e(n,m);
 xn_punto_fijo = e(n-1,m);
 
 tic;
-f = secante(f, 1, 3);
+h = secante(f, 1, 3);
 tiempo_secante = toc;
-[n,m] = size(f);
+[n,m] = size(h);
 i_secante = m -1;
-error_secante = f(n,m);
-xn_secante = f(n-1,m);
+error_secante = h(n,m);
+xn_secante = h(n-1,m);
 
-g = @(x) cos(x) - (1/2)*x;
 tic;
-g = regula_falsi(g, -5, 5);
+g = regula_falsi(f, -5, 5);
 tiempo_regula_falsi = toc;
 [n,m] = size(g);
 i_regula_falsi = m -1;
 error_regula_falsi = g(n,m);
 xn_regula_falsi = g(n-1,m);
+
+tic;
+h = biseccion(f, -5, 5);
+tiempo_biseccion = toc;
+[n,m] = size(h);
+i_biseccion = m -1;
+error_biseccion = h(n,m);
+xn_biseccion = h(n-1,m);
 
 fprintf('Método\t\t T.Ejecución\t N.Iteraciones\t xn\t\t error\n');
 %Newton-Raphson
@@ -233,6 +262,10 @@ fprintf('\n');
 
 %Regula Falsi
 fprintf('Regula Falsi\t %.4f\t\t %.0f\t\t %.4f\t\t %.4f\t\t', tiempo_regula_falsi, i_regula_falsi, xn_regula_falsi, error_regula_falsi);
+fprintf('\n');
+
+%Biseccion
+fprintf('Biseccion\t %.4f\t\t %.0f\t\t %.4f\t\t %.4f\t\t', tiempo_biseccion, i_biseccion, xn_biseccion, error_biseccion);
 fprintf('\n\n');
 
 catch err
@@ -280,21 +313,28 @@ error_punto_fijo = e(n,m);
 xn_punto_fijo = e(n-1,m);
 
 tic;
-f = secante(f, 1, 3);
+h = secante(f, 1, 3);
 tiempo_secante = toc;
-[n,m] = size(f);
+[n,m] = size(h);
 i_secante = m -1;
-error_secante = f(n,m);
-xn_secante = f(n-1,m);
+error_secante = h(n,m);
+xn_secante = h(n-1,m);
 
-g = @(x) 2*x.^(2) - 13*x + 15;
 tic;
-g = regula_falsi(g, -5, 5);
+g = regula_falsi(f, 1, 3);
 tiempo_regula_falsi = toc;
 [n,m] = size(g);
 i_regula_falsi = m -1;
 error_regula_falsi = g(n,m);
 xn_regula_falsi = g(n-1,m);
+
+tic;
+h = biseccion(f, -5, 5);
+tiempo_biseccion = toc;
+[n,m] = size(h);
+i_biseccion = m -1;
+error_biseccion = h(n,m);
+xn_biseccion = h(n-1,m);
 
 fprintf('Método\t\t T.Ejecución\t N.Iteraciones\t xn\t\t error\n');
 %Newton-Raphson
@@ -311,6 +351,10 @@ fprintf('\n');
 
 %Regula Falsi
 fprintf('Regula Falsi\t %.4f\t\t %.0f\t\t %.4f\t\t %.4f\t\t', tiempo_regula_falsi, i_regula_falsi, xn_regula_falsi, error_regula_falsi);
+fprintf('\n');
+
+%Biseccion
+fprintf('Biseccion\t %.4f\t\t %.0f\t\t %.4f\t\t %.4f\t\t', tiempo_biseccion, i_biseccion, xn_biseccion, error_biseccion);
 fprintf('\n\n');
 
 catch err
