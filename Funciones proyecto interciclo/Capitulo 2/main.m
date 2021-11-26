@@ -14,7 +14,7 @@ clear, clc
 % Problema 1
 % En el ambito de las ecuaciones diferenciales de orden superior, muchas de
 % estas tienen una solucion de la forma y = e^rx. Hallar r del sistema 
-% r^2 - 5r + 1 = 0, ecuentre una solucion para la ecuacion diferencial.
+% r^2 - 6r + 8 = 0, ecuentre una solucion para la ecuacion diferencial.
 
 disp('Problema 1')
 
@@ -41,7 +41,7 @@ error_newton = d(n,m);
 xn_newton = d(n-1,m);
 
 tic;
-e = punto_fijo(f_r, 1);
+e = punto_fijo(f_r, 2.5);
 tiempo_punto_fijo = toc;
 [n,m] = size(e);
 i_punto_fijo = m -1;
