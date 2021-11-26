@@ -247,7 +247,7 @@ end
 % otra antena que cuando su señal choque con la otra.
 % Estas se anulen, la funciones de las antenas mezcladas es : 2x^2-13x+15=0
 
-disp('Problema 3')
+disp('Problema 4')
 
 f = @(x) 2*x.^(2) - 13*x + 15;
 f_r = @(x) (2*x.^(2)+15)/13;
