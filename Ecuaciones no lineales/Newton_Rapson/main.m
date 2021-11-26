@@ -23,8 +23,8 @@ clear, clc, clf;
 
 disp("Esfera flotante");
 
-f = @(x) x.^(3) - 0.165*x.^(2) + 0.0003993;
-df = @(x) 3*x.^(2) - 0.33*x;
+f = @(x) 2*x.^(2) - 13*x + 15;
+df = @(x) 4*x - 13;
 
 figure(1)
 fplot(f,[-5, 5])
