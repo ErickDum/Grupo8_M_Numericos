@@ -21,3 +21,11 @@ df = @(x) 2*x + 2;
 
 f = @(x) x.^(3) - 3*x.^(2)+2*x;
 df = @(x) 3*x.^(2) - 6*x + 2;
+
+% Problema 4 :
+% Se desea construir una carcel de maxima seguridad, por lo que se necesita que en esa ubicaion no exista covertura movil,
+% misma la cual es emitida por una antena cercana, por lo que se construyo otra antena que cuando su señal choque con la otra\
+% Estas se anulen, la funciones de las antenas mezcladas es : 2x^2-13x+15=0
+
+f = @(x) 2*x.^(2) - 13*x + 15;
+df = @(x) 4*x - 13;
