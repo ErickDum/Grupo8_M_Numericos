@@ -1,19 +1,13 @@
-%Metodo de regula falsi
-% Autores: Mateo Chimbo
-%          Erick Dumas
-%          Karla Esterilla
-% Fecha: 21/10/21
-% Descripción: Implementacion del metodo regula falsi para hallar 
-% las raices en ecuaciones no lineales
-% Parámetros:
-% r: Raiz encontrada por el metodo
-% iteraciones: numero de iteraciones usadas
-% LL: Limite izquierdo del intervalo
-% RL: Limite derecho del intervalo
-% PC: Cuerda entre los 2 limites
-% f: Funcion que se evaluara
-% tol: Error de tolerancia 
-% max: Iterasiones maximas
+% REGULA_FALSI  Raices de ecuaciones (didáctica).
+% REGULA_FALSI(F, DF, X0, N_1, TOL)
+%    [DATOS] = BISECCION(F, DF, X0, N_1, TOL)
+%     datos = matriz de resultados 
+%     f = funcion a tratar
+%     x1 = limite izquierdo
+%     x2 = limite derecho
+%     n_i = numero de iteraciones
+%     tol = tolerancia
+
 
 function [datos]=regula_falsi(f, x1, x2, n_i = 100, tol = 0.001)
    datos = zeros(2,1);

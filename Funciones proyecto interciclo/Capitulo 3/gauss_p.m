@@ -1,12 +1,3 @@
-% Autores: Mateo Chimbo
-%          Erick Dumas
-%          Karla Esterilla
-%
-% Fecha: 28/10/2021
-%
-% Descripcion: 
-% Implementacion del metodo de Gauss con pivot para resolver un sistema de 
-% ecuaciones lineales.
 % gauss_p(a, b)
 %     [x]= gauss_p(a, b)
 %      x = matriz de resultados
