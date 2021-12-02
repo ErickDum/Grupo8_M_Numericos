@@ -7,13 +7,10 @@
 %     b = limite superior de la integral
 %     n = numero de segmentos 
 
-clear, clc
-f = @(x) 0.2 + 25*x - 200*x.^2 + 675*x.^3 - 900*x.^4 + 400*x.^5;
-a = 0;
-b = 0.8;
-n = 4;
-
 function [I, ea]=simpson_1_3(f, a, b, n)
+  if (a>b)
+    error('Limites incorrectos')
+  endif
   h = (b-a)/n;
   x = [];
   i = a;
@@ -34,5 +31,3 @@ function [I, ea]=simpson_1_3(f, a, b, n)
   dx4 = diff(f(a:0.001:b), 4)/0.001^4;
   ea = -((b-a).^5/(180*n.^4))*mean(dx4);
 end
-
-[I, ea]=simpson_1_3(f, a, b, n)
