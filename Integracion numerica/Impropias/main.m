@@ -36,10 +36,27 @@ legend('Trompeta de Gabriel')
 xlabel('v');ylabel('u');zlabel('z')
 
 
-%Problema 2
+% Problema 2
+% La distribución normal acumulativa es una fórmula importante en estadística
+% determine N(1) en forma numérica.
+
+disp('Problema 2')
 
 f = @(x) exp(-x.^2/2);
+
+try
 li = '-i';
 lr = -2;
+[I1] = impropias(f, li, lr, 1/8);
 
-impropias(f, li, lr, 1/8)
+a = -2;
+b = 1;
+[I2, ea2] = simpson_1_3(f, a, b, 6);
+
+I = I1 + I2;
+
+N1 = (1/sqrt(2*pi)) * I
+
+catch err
+fprintf('Error: %s\n',err.message);
+end
