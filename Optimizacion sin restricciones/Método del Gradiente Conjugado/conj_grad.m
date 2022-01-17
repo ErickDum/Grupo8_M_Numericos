@@ -7,6 +7,13 @@
 %     x0 = matriz con valores iniciales
 
 function [x, i] = conj_grad(A,b,x0)
+  [n, m] = size(A);
+  if (n != m)
+    error('Error de dimensiones en la matriz A')
+  endif
+  if (n != length(b))
+    error('Error de dimensiones en la matriz B')
+  endif
   x = x0;
   r = b - A*x; %Residuo
   d = r'*r;

@@ -18,9 +18,14 @@ disp('Problema 1')
 A = [7, 4; 4, 7];
 b = [2; 2];
 x0 = [0; 0];
-
+try
 [x, iteraciones] = conj_grad(A, b, x0)
 
+catch err
+  fprintf('Error: %s\n',err.message);
+end
+
+% Plotting
 xi = -2:.1:2;
 
 quadform = zeros(length(xi));
@@ -54,4 +59,9 @@ A = [2, -1, 0, 0; -1, 2, -1, 0; 0, -1, 2, -1; 0, 0, -1, 2];
 b = [-3; 2; 2; -3];
 x0 = [0; 0; 0; 0];
 
+try
 [x, iteraciones] = conj_grad(A, b, x0)
+
+catch err
+  fprintf('Error: %s\n',err.message);
+end
