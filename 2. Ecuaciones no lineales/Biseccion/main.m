@@ -20,7 +20,9 @@ delta = 2;
 datos=""
 
 try 
+  tic;
   [y, datos, iter] = biseccion(f,a,b);
+  Tiempo_Ejecucion = toc
   fprintf('El valor de corte es y=%d, el n?mero de iteraciones es %d\n',y,iter);
   
   h=figure(1);
