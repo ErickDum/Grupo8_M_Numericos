@@ -10,6 +10,7 @@
 %   Descripci?n del problema 1
 % 
 
+clear, clc
 
 f = @(x) x.^2 - 5;
 % f = @(x) sen(x)+2*x+1;
@@ -44,7 +45,7 @@ try
   set(gca, "box", "on")
   
   [n,m] = size(datos)
-  fprintf('Interaci?n\ta\tb\tc\tf(a)\tf(b)\tf(c)\terror\n');
+  fprintf('Interacion\ta\tb\tc\tf(a)\tf(b)\tf(c)\terror\n');
   for i=1:n
     fprintf('%d\t',i);
     for j=1:m
