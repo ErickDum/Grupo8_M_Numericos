@@ -1,14 +1,14 @@
-%BISECCIOND    Raices de ecuaciones (didáctica).
+%BISECCIOND    Raices de ecuaciones (did?ctica).
 %   BISECCIOND(FUN,A,B,T,ITER) llenar
 %       [c,datos] = biseccion(fun, a, b, t, iter)
-%       c = raiz de la función
-%       datos = todas las variables de la ejecución
-%       fun = la función a tratar
+%       c = raiz de la funci?n
+%       datos = todas las variables de la ejecuci?n
+%       fun = la funci?n a tratar
 %       [a,b] intervalo
 %       t = tolerancia
-%       iter = número máximo de iteraciones
+%       iter = n?mero m?ximo de iteraciones
 %
-%   See also SLASH, ... (poner los otros métodos que se utilizan para 
+%   See also SLASH, ... (poner los otros m?todos que se utilizan para 
 %   resolver las raices de ecuaciones.
 
 %   Copyright 2013-2014 Universidad de Cuenca.
@@ -17,7 +17,7 @@
 function [c,datos,i] = biseccion(fun,a,b,tol=0.001,iter=1000)
 i=1;
 
-#f=@(x) eval(fun); % funciones anónimas
+#f=@(x) eval(fun); % funciones an?nimas
 f=fun;
 while 1
     fa=f(a);
@@ -41,7 +41,7 @@ while 1
         error(msgID,msg);
     elseif i>iter
         msgID = 'BISECCION:iteraciones';
-        msg = 'Gran número de iteraciones, posiblemente el método divergió';
+        msg = 'Gran n?mero de iteraciones, posiblemente el m?todo divergi?';
         #baseException = MException(msgID,msg);
         #throw(baseException);
         error(msgID,msg)

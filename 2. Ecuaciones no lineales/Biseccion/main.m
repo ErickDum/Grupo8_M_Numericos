@@ -3,11 +3,11 @@
 % Fecha:
 % Descripcion: 
 %
-clear, clc
+
 
 % Problema 1:
 %   
-%   Descripción del problema 1
+%   Descripci?n del problema 1
 % 
 
 
@@ -16,11 +16,11 @@ f = @(x) x.^2 - 5;
 a = -3;
 b = 0;
 delta = 2;
-datos="";
+datos=""
 
 try 
-  [y, datos, iter] = biseccion(f,a,b, 0.001, 10);
-  fprintf('El valor de corte es y=%d, el número de iteraciones es %d\n',y,iter);
+  [y, datos, iter] = biseccion(f,a,b);
+  fprintf('El valor de corte es y=%d, el n?mero de iteraciones es %d\n',y,iter);
   
   h=figure(1);
   x = a-delta:0.1:b+delta;
@@ -44,7 +44,7 @@ try
   set(gca, "box", "on")
   
   [n,m] = size(datos)
-  fprintf('Interación\ta\tb\tc\tf(a)\tf(b)\tf(c)\terror\n');
+  fprintf('Interaci?n\ta\tb\tc\tf(a)\tf(b)\tf(c)\terror\n');
   for i=1:n
     fprintf('%d\t',i);
     for j=1:m
@@ -63,5 +63,5 @@ hold off;
 
 % Problema 2:
 %   
-%   Descripción del problema 2
+%   Descripci?n del problema 2
 % 
