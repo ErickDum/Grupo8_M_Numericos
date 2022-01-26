@@ -24,7 +24,9 @@ try
 A = [-2000, 2000; -6000, 8000];
 b = [0; 3];
 
+tic;
 [I, Error, Iteraciones] = jacobi(A, b)
+toc
 catch err
 fprintf('Error: %s\n',err.message)
 end
@@ -43,7 +45,9 @@ try
 A = [-1, 2, 0; 0, 1, 0; -2000, 0, 8000];
 b = [0; 0.002; 3];
 
+tic;
 [I, Error, Iteraciones] = jacobi(A, b)
+toc
 catch err
 fprintf('Error: %s\n',err.message)
 end

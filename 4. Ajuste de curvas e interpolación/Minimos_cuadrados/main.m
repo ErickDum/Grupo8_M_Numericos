@@ -22,7 +22,9 @@ try
 x = [5, 3 ,3, 1]; %Antiguedad (años)
 y = [7; 7; 6; 4]; %Costos de reparacion
 
-[Sr, a0, a1] = minimos_cuadrados(x, y);
+tic;
+[Sr, a0, a1] = minimos_cuadrados(x, y)
+toc
 
 fprintf('Suma de los cuadrados de los residuos: \n')
 fprintf('%.4f', Sr)
@@ -60,7 +62,9 @@ try
 x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; % Meses
 y = [600; 1550; 1500; 1500; 2400; 3100; 2600; 2900; 3800; 4500; 4000; 4900]; %Ventas
 
-[Sr, a0, a1] = minimos_cuadrados(x, y);
+tic;
+[Sr, a0, a1] = minimos_cuadrados(x, y)
+toc
 
 fprintf('Suma de los cuadrados de los residuos: \n')
 fprintf('%.4f', Sr)

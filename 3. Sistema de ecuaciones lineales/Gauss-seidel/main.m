@@ -24,7 +24,9 @@ try
 A = [1, 0, 0, 0; 1, 1, -1, 0; 0, 1000, 3000, -2000; 0, 1000, 1000, -2000];
 b = [0.004; 0; 8; 12];
 
+tic;
 [I, Error, Iteraciones] = gauss_seidel(A, b)
+toc
 catch err
 fprintf('Error: %s\n',err.message)
 end
@@ -50,7 +52,9 @@ A = [3, -1, 0, -1, 0, 0;
 
 b = [0; 0.006; 0; 0.012; 0; 0];
 
+tic;
 [I, Error, Iteraciones] = gauss_seidel(A, b)
+toc
 catch err
 fprintf('Error: %s\n',err.message)
 end

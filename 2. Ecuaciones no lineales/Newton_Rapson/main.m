@@ -35,16 +35,18 @@ ylabel('Y', 'Interpreter', 'latex')
 grid on
 hold on
 
+tic;
 d = newton(f, df, 0.05, 100);
+toc
 
 [n,m] = size(d);
-fprintf('Iteración\txn\terror\n');
+fprintf('Iteración\txn\t\terror\n');
 
 for i=2:m
   plot(d(1,i), 0 , 'o')
-  fprintf('%d\t',i-1);
-  fprintf('%d\t',d(1,i));
-  fprintf('%d\t',d(2,i));
+  fprintf('%d\t\t',i-1);
+  fprintf('%d\t\t',d(1,i));
+  fprintf('%d\t\t\t',d(2,i));
   fprintf('\n');
 endfor
 %
@@ -74,7 +76,9 @@ ylabel('Y', 'Interpreter', 'latex')
 grid on
 hold on
 
+tic
 d = newton(g, dg, 0.5, 3);
+toc
 
 [n,m] = size(d);
 fprintf('Iteración\txn\terror\n');

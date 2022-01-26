@@ -24,7 +24,9 @@ try
 a = [4, 0, -2; 0, 2, -1; -2, -1, 7];
 b = [-16; 8; 0];
 
+tic;
 [L, U]=lu(a);
+toc
 
 y = sustitucion_progresiva(L, b);
 V = sustitucion_regresiva(U, y)
@@ -48,7 +50,9 @@ try
 a = [11, -5, -6; -5, 19, -2; -1, -1, 2];
 b = [12; 0; 0];
 
+tic;
 [L, U]=lu(a);
+toc
 
 y = sustitucion_progresiva(L, b);
 I = sustitucion_regresiva(U, y)

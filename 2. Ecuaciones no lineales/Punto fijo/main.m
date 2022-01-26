@@ -20,16 +20,9 @@ fprintf('Lanzamiento de bala \n');
 f_r = @(x) -0.0241*x.^(2) + x +5.5;      %Funcion original f(x)
 f = @(x) (x + 5.5)/(0.0241*x);           %Funcion despejada x = g(x)
 
-
+tic;
 [d, i, n_i] = punto_fijo(f, 5);
-
-try
-if (i==n_i)
-  error('Numero maximo de iteraciones')
-endif
-catch err
-fprintf('Error: %s\n',err.message);
-end
+toc
 
 figure(1)
 fplot(f_r,[-5, 50])
