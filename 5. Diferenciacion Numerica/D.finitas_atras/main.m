@@ -21,7 +21,9 @@ try
 i = @(t) 10*sin(3*t);
 t = linspace(0,10,100);
 
+tic;
 [d1, d2] = finitas_atras(i, t);
+toc
 
 Vl = 15*d1(2,:);
 
@@ -48,7 +50,9 @@ try
 i = @(t) 30*sin(5*t);
 t = linspace(0,10,100);
 
+tic;
 [d1, d2] = finitas_atras(i, t);
+toc
 
 Vl = 15*d1(2,:);
 

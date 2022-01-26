@@ -23,7 +23,9 @@ x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; % Meses
 y = [600; 1550; 1500; 1500; 2400; 3100; 2600; 2900; 3800; 4500; 4000; 4900]; %Ventas
 xx = linspace(x(1),x(length(x)));
 
+tic;
 [yy, dy] = natspline(x, y, xx);
+toc
 
 figure(1)
 subplot(2,1,1)
@@ -50,10 +52,12 @@ disp('PROBLEMA 2')
 try
 
 T = [0, 8, 16, 24, 32, 40];
-o = [14.621, 11.843, 9.870, 8.418, 7.305, 6.413]
+o = [14.621, 11.843, 9.870, 8.418, 7.305, 6.413];
 TT = linspace(T(1),T(length(T)));
 
+tic;
 [oo, d1o] = natspline(T, o, TT);
+toc
 
 figure(2)
 subplot(2,1,1)

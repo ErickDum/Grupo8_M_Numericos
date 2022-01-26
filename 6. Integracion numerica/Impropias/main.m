@@ -19,7 +19,10 @@ disp('Problema 1')
 f = @(x) 1/(x.^2) ;
 
 try
-[I] = impropias(f, 'i', 1, 1/8);
+tic;
+[I] = impropias(f, 'i', 1, 1/8)
+toc
+
 V = I*pi
 catch err
 fprintf('Error: %s\n',err.message);
