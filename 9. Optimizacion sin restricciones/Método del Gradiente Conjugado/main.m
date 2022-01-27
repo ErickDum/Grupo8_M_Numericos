@@ -19,7 +19,9 @@ A = [7, 4; 4, 7];
 b = [2; 2];
 x0 = [0; 0];
 try
+tic;
 [x, iteraciones] = conj_grad(A, b, x0)
+toc
 
 catch err
   fprintf('Error: %s\n',err.message);
@@ -60,7 +62,9 @@ b = [-3; 2; 2; -3];
 x0 = [0; 0; 0; 0];
 
 try
+tic;
 [x, iteraciones] = conj_grad(A, b, x0)
+toc;
 
 catch err
   fprintf('Error: %s\n',err.message);
