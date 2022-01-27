@@ -5,8 +5,8 @@
 % Fecha: 10/01/2022
 %
 % Descripcion: 
-% Implementacion del metodo de interpolacion cuadratica para hallar
-% el minimo de una funcion.
+  % Implementacion del metodo de interpolacion cuadratica para hallar
+  % el minimo de una funcion.
 
 clear, clc, clf;
 
@@ -19,7 +19,9 @@ f = @(x) exp(-2*x) + x.^(2);
 x1 = -5;
 x3 = 5;
 
+tic;
 [x, y, Iteraciones]=quadratic_interpol(f, x1, x3)
+toc;
 
 figure(1)
 fplot(f, [-1, 1])
@@ -46,7 +48,9 @@ f = @(x) 3*exp(x) - x.^(3) + 4*x;
 x1 = -3;
 x3 = 3;
 
+tic;
 [x, y, Iteraciones]=quadratic_interpol(f, x1, x3)
+toc
 
 figure(2)
 fplot(f, [-3, 3])
