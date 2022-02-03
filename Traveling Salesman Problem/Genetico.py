@@ -22,7 +22,7 @@ tsp = tsp.TravelingSalesmanProblem(TSP_NAME)                 # Extrae la informa
 
 # CONSTANTES:
 Tam_Poblacion = 300
-Maximas_Generaciones = 200
+Maximas_Generaciones = 500
 HallOfFame = 1
 N_Padres = int(Tam_Poblacion/2)    # MU
 N_Hijos = N_Padres*2               # LAMBDA
@@ -47,7 +47,7 @@ toolbox.register("evaluate", tpsDistance)
 
 toolbox.register("select", tools.selTournament, tournsize=3)                    # Funcion de seleccion
 toolbox.register("mate", tools.cxOrdered)                                       # Funcion de apareamiento
-toolbox.register("mutate", tools.mutShuffleIndexes, indpb=1.0/len(tsp))         #Funcion de mutacion
+toolbox.register("mutate", tools.mutShuffleIndexes, indpb=1.0/len(tsp))         # Funcion de mutacion
 
 
 def simple():
@@ -115,6 +115,7 @@ def main():
         log.append(data2)
         hof.append(data3)
 
+    plt.figure(figsize=(12,4))
     # Grafica recorridos
     for i in range(3):
         plt.figure(1)
@@ -127,7 +128,7 @@ def main():
         print("-- Mejor estado = ", best.fitness.values[0])
         print("\n")
 
-
+    plt.figure(figsize=(12,4))
     # Grafica stats
     for j in range(3):
         plt.figure(2)
